@@ -1,0 +1,465 @@
+<html>
+<head>
+<style>
+body{
+text-align:center;
+}
+.main_cont{
+width:950px;
+height:500px;
+position:relative;
+top:10%;
+left:15%;
+border:2px solid black;
+}
+.sub_cont{
+display:inline-block;
+width:30%;
+height:80%;
+margin-top:5%;
+margin-left:1.5%;
+border:2px solid black;
+}
+
+.head{
+position:absolute;
+width:28%;
+margin-left:1%;
+text-align:center;
+height:10%;
+border: 2px solid black;
+font-size:23px;
+}
+
+table{
+display:inline-block;
+margin-left:50px;
+margin-top:0px;
+}
+
+table td{
+padding:2%;
+}
+
+.input_fields{
+width:40px;
+}
+
+.button1{
+position:absolute;
+left:350px;
+top:500px;
+}
+
+.button2{
+position:absolute;
+left:650px;
+top:500px;
+}
+
+.button3{
+position:absolute;
+right:350px;
+top:500px;
+}
+
+.t3{
+position:relative;
+top:60px;
+}
+.t2{
+position:relative;
+top:60px;
+}
+.t1{
+position:relative;
+top:60px;
+}
+
+</style>
+</head>
+<body>
+<h1>Date Calculator</h1>
+
+<table class="t1">
+	<tr>
+		<td colspan="6"><h3>Difference in dates</h3></td>
+	</tr>
+	<tr>
+		<td colspan="6"><b/>Enter the start date:</td>
+	</tr>
+	<tr>
+		<td>Day:</td>
+		<td><input type="text" class="input_fields" maxlength="2" id="day1"></td>
+		<td>Month:</td>
+		<td><input type="text" class="input_fields" maxlength="2" id="month1"></td>
+		<td>Year:</td>
+		<td><input type="text" class="input_fields" maxlength="4" id="year1"></td>
+	</tr>
+
+	<tr>
+		<td colspan="6"><b/>Enter the end date:</td>
+	</tr>
+	<tr>
+		<td>Day:</td>
+		<td><input type="text" class="input_fields" maxlength="2" id="day2"></td>
+		<td>Month:</td>
+		<td><input type="text" class="input_fields" maxlength="2" id="month2"></td>
+		<td>Year:</td>
+		<td><input type="text" class="input_fields" maxlength="4" id="year2"></td>
+	</tr>
+
+	<tr>
+		<td colspan="6"><b/>The difference in dates:</td>
+	</tr>
+	<tr>
+		<td>Day:</td>
+		<td><input type="text" class="input_fields" maxlength="2" id="day3"></td>
+		<td>Month:</td>
+		<td><input type="text" class="input_fields" maxlength="2" id="month3"></td>
+		<td>Year:</td>
+		<td><input type="text" class="input_fields" maxlength="4" id="year3"></td>
+	</tr>
+</table>
+
+
+
+
+
+<table class="t2">
+	<tr>
+		<td colspan="6"><h3>Difference in times</h3></td>
+	</tr>
+	<tr>
+		<td colspan="6"><b/>Enter the start time(in 24hrs format):</td>
+	</tr>
+	<tr>
+		<td>Hours:</td>
+		<td><input type="text" class="input_fields" id="hour1"></td>
+		<td>Minutes:</td>
+		<td><input type="text" class="input_fields" maxlength="2" id="minute1"></td>
+		<td>Seconds:</td>
+		<td><input type="text" class="input_fields" maxlength="2" id="second1"></td>
+	</tr>
+
+	<tr>
+		<td colspan="6"><b/>Enter the end time(in 24 hrs format):</td>
+	</tr>
+	<tr>
+		<td>Hours:</td>
+		<td><input type="text" class="input_fields" id="hour2"></td>
+		<td>Minutes:</td>
+		<td><input type="text" class="input_fields" maxlength="2" id="minute2"></td>
+		<td>Seconds:</td>
+		<td><input type="text" class="input_fields" maxlength="2" id="second2"></td>
+	</tr>
+
+	<tr>
+		<td colspan="6"><b/>The difference in times:</td>
+	</tr>
+	<tr>
+		<td>Hours:</td>
+		<td><input type="text" class="input_fields" id="hour3"></td>
+		<td>Minutes:</td>
+		<td><input type="text" class="input_fields" maxlength="2" id="minute3"></td>
+		<td>Seconds:</td>
+		<td><input type="text" class="input_fields" maxlength="4" id="second3"></td>
+	</tr>
+</table>
+
+
+
+<table class="t3">
+	<tr>
+		<td colspan="6"><h3>Obtain a future date</h3></td>
+	</tr>
+	<tr>
+		<td colspan="6"><b/>Enter the start date:</td>
+	</tr>
+	<tr>
+		<td>Day:</td>
+		<td><input type="text" class="input_fields" maxlength="2" id="day01"></td>
+		<td>Month:</td>
+		<td><input type="text" class="input_fields" maxlength="2" id="month01"></td>
+		<td>Year:</td>
+		<td><input type="text" class="input_fields" maxlength="4" id="year01"></td>
+	</tr>
+	<tr>
+		<td>Hours:</td>
+		<td><input type="text" class="input_fields" id="hour01"></td>
+		<td>Minutes:</td>
+		<td><input type="text" class="input_fields" maxlength="2" id="minute01"></td>
+		<td>Seconds:</td>
+		<td><input type="text" class="input_fields" maxlength="2" id="second01"></td>
+	</tr>
+
+
+	<tr>
+		<td colspan="6"><b/>Enter the interval:</td>
+	</tr>
+	<tr>
+		<td>Day:</td>
+		<td><input type="text" class="input_fields" maxlength="2" id="day02"></td>
+		<td>Month:</td>
+		<td><input type="text" class="input_fields" maxlength="2" id="month02"></td>
+		<td>Year:</td>
+		<td><input type="text" class="input_fields" maxlength="4" id="year02"></td>
+	</tr>
+	<tr>
+		<td>Hours:</td>
+		<td><input type="text" class="input_fields" id="hour02"></td>
+		<td>Minutes:</td>
+		<td><input type="text" class="input_fields" maxlength="2" id="minute02"></td>
+		<td>Seconds:</td>
+		<td><input type="text" class="input_fields" maxlength="2" id="second02"></td>
+	</tr>
+
+
+	<tr>
+		<td colspan="6"><b/>The future date:</td>
+	</tr>
+	<tr>
+		<td>Day:</td>
+		<td><input type="text" class="input_fields" maxlength="2" id="day03"></td>
+		<td>Month:</td>
+		<td><input type="text" class="input_fields" maxlength="2" id="month03"></td>
+		<td>Year:</td>
+		<td><input type="text" class="input_fields" maxlength="4" id="year03"></td>
+	</tr>
+	<tr>
+		<td>Hours:</td>
+		<td><input type="text" class="input_fields" id="hour03"></td>
+		<td>Minutes:</td>
+		<td><input type="text" class="input_fields" maxlength="2" id="minute03"></td>
+		<td>Seconds:</td>
+		<td><input type="text" class="input_fields" maxlength="4" id="second03"></td>
+	</tr>
+</table>
+
+<input type="button" value="Calculate" class="button1" onclick="dates()">
+<input type="button" value="Calculate" class="button2" onclick="times()">
+<input type="button" value="Calculate" class="button3" onclick="both()">
+
+<script>
+
+var day;
+function validate_date(d,m,y)
+{
+	if(m<0||m>12)
+		return 0;
+	if(y%400==0)	
+		day=29;
+	else if(y%100==0)
+		day=28;
+	else if(y%4==0)
+		day=29;
+	else
+		day=28;
+
+	if(m==2&&d>day)
+	return 0;
+
+	switch(m){
+		case 1:
+			day=31;
+			break;
+		case 2:
+			break;
+		case 3:
+			day=31;
+			break;
+		case 4:
+			day=30;
+			break;
+		case 5:
+			day=31;
+			break;
+		case 6:
+			day=30;
+			break;
+		case 7:
+			day=31;
+			break;
+		case 8:
+			day=31;
+			break;
+		case 9:
+			day=30;
+			break;
+		case 10:
+			day=31;
+			break;
+		case 11:
+			day=30;
+			break;
+		case 12:
+			day=31;
+			break;
+		}
+	if(d>day)
+		return 0;
+	else
+		return 1;
+}
+
+function dates()
+{
+	var day1=parseInt(document.getElementById("day1").value);
+	var day2=parseInt(document.getElementById("day2").value);
+	var month1=parseInt(document.getElementById("month1").value);
+	var month2=parseInt(document.getElementById("month2").value);
+	var year1=parseInt(document.getElementById("year1").value);
+	var year2=parseInt(document.getElementById("year2").value);
+	if(validate_date(day1,month1,year1)&&validate_date(day2,month2,year2))
+	{
+		if(day2<day1)
+		{
+			if(day==28)
+				var days_in_months=[0,31,28,31,30,31,30,31,31,30,31,30,31];
+			else
+				var days_in_months=[0,31,29,31,30,31,30,31,31,30,31,30,31];
+			if(month2==1)
+			{
+				day2+=days_in_months[12];
+				month2=12;
+				year2--;
+			}
+			else
+			{
+				day2+=days_in_months[month2-1];
+				month2--;
+			}
+		}
+
+		if(day2<day1) //rare condition, when day2 was 1st March and day1 was 31st of any month, then after the above if-else condition, day2 is still less than day1
+		{
+			day2+=days_in_months[1];
+			month2--;
+		}
+			
+		if(month2<month1)
+		{
+			month2+=12;
+			year2--;
+		}
+		var day_diff=day2-day1;
+		var month_diff=month2-month1;
+		var year_diff=year2-year1;
+		document.getElementById("day3").value=day_diff;
+		document.getElementById("month3").value=month_diff;
+		document.getElementById("year3").value=year_diff;
+	}
+	else
+	alert("Please enter correct input");
+}
+function validate_time(h,m,s)
+{
+	if(s<0||s>59||m<0||m>59||h<0)
+		return 0;
+	else
+		return 1;
+}
+
+function times()
+{
+	var hour1=parseInt(document.getElementById("hour1").value);
+	var hour2=parseInt(document.getElementById("hour2").value);
+	var minute1=parseInt(document.getElementById("minute1").value);
+	var minute2=parseInt(document.getElementById("minute2").value);
+	var second1=parseInt(document.getElementById("second1").value);
+	var second2=parseInt(document.getElementById("second2").value);
+	if(validate_time(hour1,minute1,second1)&&validate_time(hour2,minute2,second2))
+	{
+		if(hour2<hour1)
+		{
+			var x=hour2;
+			hour2=hour1;
+			hour1=x;
+			x=minute2;
+			minute2=minute1;
+			minute1=x;
+			x=second2;
+			second2=second1;
+			second1=x;
+		}
+		if(second2<second1)
+		{
+			second2+=60;
+			minute2--;
+		}
+		if(minute2<minute1)
+		{
+			minute2+=60;
+			hour2--;
+		}
+		var hour_diff=hour2-hour1;
+		var minute_diff=minute2-minute1;
+		var second_diff=second2-second1;
+		document.getElementById("hour3").value=hour_diff;
+		document.getElementById("minute3").value=minute_diff;
+		document.getElementById("second3").value=second_diff;
+	}
+	else
+		alert("Please enter correct input");
+}
+
+function both()
+{
+	var day01=parseInt(document.getElementById("day01").value);
+	var day02=parseInt(document.getElementById("day02").value);
+	var month01=parseInt(document.getElementById("month01").value);
+	var month02=parseInt(document.getElementById("month02").value);
+	var year01=parseInt(document.getElementById("year01").value);
+	var year02=parseInt(document.getElementById("year02").value);
+	var hour01=parseInt(document.getElementById("hour01").value);
+	var hour02=parseInt(document.getElementById("hour02").value);
+	var minute01=parseInt(document.getElementById("minute01").value);
+	var minute02=parseInt(document.getElementById("minute02").value);
+	var second01=parseInt(document.getElementById("second01").value);
+	var second02=parseInt(document.getElementById("second02").value);
+	if(validate_date(day01,month01,year01)&&validate_date(day02,month02,year02)&&validate_time(hour01,minute01,second01)&&validate_time(hour02,minute02,second02))
+	{
+		var year_sum=year01+year02;
+		var month_sum=month01+month02;
+		year_sum+=month_sum/12;
+		month_sum=month_sum%12;
+		var day_sum=day01+day02;
+		var days_in_months=[0,31,0,31,30,31,30,31,31,30,31,30,31];
+		if(year_sum%400==0)	
+			days_in_months[2]=29;
+		else if(year_sum%100==0)
+			days_in_months[2]=28;
+		else if(year_sum%4==0)
+			days_in_months[2]=29;
+		else
+			days_in_months[2]=28;
+		while(day_sum>days_in_months[month_sum])
+		{
+			day_sum-=days_in_months[month_sum];
+			month_sum++;
+			if(month_sum==13)
+			{
+				month_sum=1;
+				year_sum++;
+			}
+		}
+		var hour_sum=hour01+hour02;
+		var minute_sum=minute01+minute02;
+		var second_sum=second01+second02;
+		minute_sum+=second_sum/60;
+		second_sum=second_sum%60;
+		hour_sum+=minute_sum/60;
+		minute_sum=minute_sum%60;
+		document.getElementById("day03").value=Math.round(day_sum);
+		document.getElementById("month03").value=Math.round(month_sum);
+		document.getElementById("year03").value=Math.round(year_sum);
+		document.getElementById("hour03").value=Math.round(hour_sum);
+		document.getElementById("minute03").value=Math.round(minute_sum);
+		document.getElementById("second03").value=Math.round(second_sum);
+	}
+	else
+		alert("Please enter correct input");
+}	
+</script>
+</body>
+</html>
