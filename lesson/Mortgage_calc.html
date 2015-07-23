@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Mortgage Calc</title>
+
+	<style>
+.main{
+	width: 350px;
+	height: 300px;
+	position: absolute;
+	top: 200px;
+	left: 600px;
+	border:2px solid black;
+	text-align: center;
+}
+
+table td{
+	width:100%;
+	padding: 2%;
+	padding-bottom: 5%
+}
+table{
+	width: 90%;
+}
+
+	</style>
+</head>
+<body>
+<div class="main">
+<h2>Mortgage Calculator</h2>
+	<table>
+	<tr>
+		<td>LOAN:</td>
+		<td><input type="text" id="loan" value="0" onfocus="f3(this)"></td>
+	</tr>
+	<tr>
+		<td>Interest:</td>
+		<td><input type="text" value="10% p.a" disabled></td>
+	</tr>
+	<tr>
+		<td>Time Period(in months):</td>
+		<td><input type="text" id="time" value="0" onfocus="f3(this)"></td>
+	</tr>
+	<tr>
+		<td>EMI:</td>
+		<td><input type="text" id="emi" value="0" onfocus="f3(this)"></td>
+	</tr>
+	</table>
+	<input type="button" value="Calculate" onclick="f1()">
+	<input type="button" value="Reset" onclick="f2()">
+</div>
+
+<h3>Please 'Reset' before a new calculation</h3>
+
+<script>
+var interest=0.1/12,temp;
+	function f1()
+	{
+		var loan=Number(document.getElementById("loan").value);
+		var time=Number(document.getElementById("time").value);
+		var emi=Number(document.getElementById("emi").value);
+		if(loan!==0&&time!==0&&emi==0)
+		{
+			temp=(1+interest);
+			temp=Math.pow(temp,time);
+			emi=Math.round((loan*interest*temp)/(temp-1));
+			document.getElementById("emi").value=emi;
+		}
+		else if(loan!==0&&time==0&&emi!==0)
+		{
+			temp=1+interest;
+			temp=Math.log(temp);
+			temp=1/temp;
+			time=temp*(Math.log(emi/(emi-(loan*interest))));
+			time=Math.ceil(time);
+			if(isNaN(time))
+			{	
+				alert("Too little EMI! You cannot payoff the loan!");
+				f2();
+			}
+			else
+			document.getElementById("time").value=time;
+		}
+		else if(loan==0&&time!==0&&emi!==0)
+		{
+			temp=1+interest;
+			temp=Math.pow(temp,time);
+			loan=Math.round((emi*(temp-1))/(interest*temp));
+			document.getElementById("loan").value=loan;
+		}
+		else
+		{
+			alert("What is there to calculate?!");
+			f2();
+		}
+	}
+	function f2()
+	{
+		document.getElementById("loan").value=0;
+		document.getElementById("time").value=0;
+		document.getElementById("emi").value=0;
+	}
+	function f3(x)
+	{
+		x.value="";
+	}
+
+</script>
+
+</body>
+</html>
